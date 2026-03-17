@@ -207,7 +207,7 @@ GSTIN: 27ABJCS7257E1ZO
 </p>
 
 <p className="mt-2 md:mt-0">
-Designed & Developed by DW Innovation
+Designed & Developed by QIRO TECH INNOVATION PVT.LTD.
 </p>
 
 </div>
