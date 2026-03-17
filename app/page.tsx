@@ -1,25 +1,38 @@
-import Hero from "@/components/home/Hero"
-import About from "@/components/home/About"
-import WhyChoose from "@/components/home/WhyChoose"
-import Services from "@/components/home/Services"
-import Products from "@/components/home/Products"
-import Facilities from "@/components/home/Facilities"
-import Mission from "@/components/home/Mission"
-import Clients from "@/components/home/Clients"
+import Hero from "@/components/sections/Hero"
+import About from "@/components/sections/About"
+import WhyChoose from "@/components/sections/WhyChoose"
+import Services from "@/components/sections/Services"
+import Products from "@/components/sections/Products"
+import Facilities from "@/components/sections/Facilities"
+import Mission from "@/components/sections/Mission"
+import Clients from "@/components/sections/Clients"
 
 export default function Home() {
   return (
-    <main>
-
+    <>
+      {/* Hero Section */}
       <Hero />
-      <About />
-      <WhyChoose />
-      <Services />
-      <Products />
-      <Facilities />
-      <Mission />
-      <Clients />
 
-    </main>
+      {/* About Section */}
+      <About />
+
+      {/* Why Choose Us */}
+      <WhyChoose />
+
+      {/* Services */}
+      <Services />
+
+      {/* Products */}
+      <Products />
+
+      {/* Facilities */}
+      <Facilities />
+
+      {/* Mission */}
+      <Mission />
+
+      {/* Clients */}
+      <Clients />
+    </>
   )
 }

@@ -1,7 +1,7 @@
 import "./globals.css"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
-import WhatsAppButton from "@/components/WhatsAppButton"
+import WhatsAppButton from "@/components/common/WhatsAppButton"
 
 export const metadata = {
   title: "Srivruksh Industries",
@@ -15,15 +15,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative">
+      <body className="relative min-h-screen flex flex-col">
 
+        {/* Navbar */}
         <Navbar />
 
-        {children}
+        {/* Main Content */}
+        <main className="flex-1">
+          {children}
+        </main>
 
+        {/* Footer */}
         <Footer />
 
-        {/* ✅ Floating WhatsApp Button */}
+        {/* Floating WhatsApp Button */}
         <WhatsAppButton />
 
       </body>
