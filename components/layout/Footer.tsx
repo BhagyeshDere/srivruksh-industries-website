@@ -37,7 +37,7 @@ return (
 <div className="flex items-center gap-3 mb-5">
 
 <Image
-src="/logo1.png"
+src="/images/assets/logo1.png"
 width={45}
 height={45}
 alt="logo"

@@ -34,7 +34,7 @@ return (
 <Link href="/" className="flex items-center gap-3 group">
 
 <Image
-src="/logo1.png"
+src="/images/assets/logo1.png"
 width={44}
 height={44}
 alt="logo"
