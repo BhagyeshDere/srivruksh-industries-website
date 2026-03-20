@@ -18,7 +18,7 @@ export default function Contact() {
           className="absolute inset-0"
         >
           <Image
-            src="/factory/automation.png"
+            src="/images/factory/automation.png"
             alt="Industrial Background"
             fill
             className="object-cover"
