@@ -2,11 +2,21 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
-
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navLinks = [
     { name: "Home", link: "/" },
@@ -18,126 +28,111 @@ export default function Navbar() {
   ]
 
   return (
+    <header className={`sticky top-0 z-50 transition-all duration-500
+      ${scrolled ? "backdrop-blur-xl bg-white/80 shadow-sm border-b border-gray-100" : "bg-white"}
+    `}>
 
-<header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-gray-200 shadow-sm">
+      {/* Gradient Glow Line */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#C79A3B]/50 to-transparent opacity-70" />
 
-  {/* Top Accent Line */}
-  <div className="h-[3px] w-full bg-gradient-to-r from-[#0B2E5B] via-[#C79A3B] to-[#0B2E5B]" />
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className={`flex justify-between items-center transition-all duration-500
+          ${scrolled ? "h-[70px]" : "h-[85px] md:h-[100px]"}`}>
 
-  <div className="max-w-7xl mx-auto px-4 md:px-6">
+          {/* Logo - Typography: Increased tracking and weight contrast */}
+          <Link href="/" className="flex items-center gap-3.5 group">
+            <div className="relative">
+              <Image
+                src="/images/assets/logo1.png"
+                width={48}
+                height={48}
+                alt="logo"
+                className="transition duration-500 group-hover:rotate-[10deg] group-hover:scale-110"
+              />
+              <div className="absolute inset-0 rounded-full bg-[#C79A3B]/20 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+            </div>
 
-    <div className="flex justify-between items-center h-[70px] md:h-[85px]">
-
-      {/* Logo */}
-      <Link href="/" className="flex items-center gap-2 md:gap-4 group">
-
-        <Image
-          src="/images/assets/logo1.png"
-          width={48}
-          height={48}
-          alt="logo"
-          className="transition duration-300 group-hover:scale-110"
-        />
-
-        <span className="text-lg md:text-xl lg:text-2xl font-bold text-[#0B2E5B] tracking-wide leading-tight">
-          Srivruksh <span className="text-[#C79A3B]">Industries</span>
-        </span>
-
-      </Link>
-
-      {/* Desktop Menu */}
-      <nav className="hidden md:flex items-center gap-8 lg:gap-12 text-gray-700 font-semibold text-[15px] lg:text-base">
-
-        {navLinks.map((item) => (
-          <Link
-            key={item.name}
-            href={item.link}
-            className="relative group transition hover:text-[#0B2E5B]"
-          >
-
-            {item.name}
-
-            {/* Animated underline */}
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#C79A3B] transition-all duration-300 group-hover:w-full"></span>
-
+            <span className="flex flex-col leading-tight">
+              <span className="text-xl md:text-2xl font-black text-[#0B2E5B] tracking-tighter uppercase italic">
+                Srivruksh
+              </span>
+              <span className="text-[10px] md:text-xs font-bold text-[#C79A3B] tracking-[0.4em] uppercase -mt-0.5">
+                Industries
+              </span>
+            </span>
           </Link>
-        ))}
 
-        {/* CTA Button */}
-        <Link
-          href="/contact"
-          className="relative overflow-hidden bg-[#C79A3B] text-black px-6 py-2.5 rounded-lg font-semibold shadow-md transition hover:scale-105 hover:shadow-lg"
-        >
-          <span className="relative z-10">Get Quote</span>
+          {/* Desktop Menu - Typography: Increased spacing for "Industrial" feel */}
+          <nav className="hidden md:flex items-center gap-8 lg:gap-10">
+            {navLinks.map((item) => {
+              const isActive = pathname === item.link
 
-          {/* Shine effect */}
-          <span className="absolute top-0 left-[-100%] w-full h-full bg-white/30 skew-x-12 transition-all duration-700 group-hover:left-[100%]"></span>
-        </Link>
+              return (
+                <Link
+                  key={item.name}
+                  href={item.link}
+                  className={`relative py-1 text-sm lg:text-[15px] font-bold uppercase tracking-[0.12em] transition-all duration-300 group
+                    ${isActive ? "text-[#0B2E5B]" : "text-gray-500 hover:text-[#0B2E5B]"}
+                  `}
+                >
+                  {item.name}
 
-      </nav>
+                  {/* Active underline */}
+                  <span className={`absolute left-0 -bottom-1 h-[2px] bg-[#C79A3B] transition-all duration-500 rounded-full
+                    ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+                  `}></span>
+                </Link>
+              )
+            })}
 
-      {/* Mobile Button */}
-      <button
-        onClick={() => setMenuOpen(!menuOpen)}
-        className="md:hidden relative w-9 h-9 flex items-center justify-center"
-      >
+            {/* CTA Typography: Heavy weight with subtle tracking */}
+            <Link
+              href="/contact"
+              className="relative overflow-hidden group bg-[#C79A3B] text-white px-7 py-3 rounded-xl text-xs lg:text-sm font-black uppercase tracking-widest shadow-lg shadow-[#C79A3B]/20 transition-all hover:scale-105 active:scale-95"
+            >
+              <span className="relative z-10">Get Quote</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+            </Link>
+          </nav>
 
-        <span
-          className={`absolute h-[2px] w-7 bg-[#0B2E5B] transition-all duration-300 ${
-            menuOpen ? "rotate-45" : "-translate-y-2"
-          }`}
-        ></span>
+          {/* Mobile Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 border border-gray-100 shadow-sm"
+          >
+            <div className="flex flex-col gap-1.5 items-end">
+              <span className={`h-[2px] bg-[#0B2E5B] transition-all duration-300 ${menuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
+              <span className={`h-[2px] bg-[#0B2E5B] transition-all duration-300 ${menuOpen ? "opacity-0" : "w-4"}`} />
+              <span className={`h-[2px] bg-[#0B2E5B] transition-all duration-300 ${menuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-5"}`} />
+            </div>
+          </button>
+        </div>
+      </div>
 
-        <span
-          className={`absolute h-[2px] w-7 bg-[#0B2E5B] transition-all duration-300 ${
-            menuOpen ? "opacity-0" : ""
-          }`}
-        ></span>
+      {/* Mobile Menu - Typography: Large, bold, and clear */}
+      <div className={`md:hidden transition-all duration-500 ease-in-out ${
+        menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+      }`}>
+        <div className="mx-4 mb-6 mt-2 rounded-[2rem] backdrop-blur-2xl bg-white/95 shadow-2xl border border-white/50 p-8 flex flex-col gap-6">
+          {navLinks.map((item) => (
+            <Link
+              key={item.name}
+              href={item.link}
+              onClick={() => setMenuOpen(false)}
+              className="text-2xl font-black text-[#0B2E5B] tracking-tight uppercase border-b border-gray-50 pb-2 active:text-[#C79A3B] transition"
+            >
+              {item.name}
+            </Link>
+          ))}
 
-        <span
-          className={`absolute h-[2px] w-7 bg-[#0B2E5B] transition-all duration-300 ${
-            menuOpen ? "-rotate-45" : "translate-y-2"
-          }`}
-        ></span>
-
-      </button>
-
-    </div>
-
-  </div>
-
-  {/* Mobile Menu */}
-  <div
-    className={`md:hidden bg-white border-t border-gray-200 transition-all duration-300 ${
-      menuOpen ? "max-h-[450px] opacity-100" : "max-h-0 overflow-hidden opacity-0"
-    }`}
-  >
-
-    <div className="flex flex-col p-6 gap-6 text-gray-700 font-semibold text-lg">
-
-      {navLinks.map((item) => (
-        <Link
-          key={item.name}
-          href={item.link}
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-[#0B2E5B] transition"
-        >
-          {item.name}
-        </Link>
-      ))}
-
-      <Link
-        href="/contact"
-        className="bg-[#C79A3B] text-black px-5 py-3 rounded-lg text-center mt-2 shadow hover:scale-105 transition font-semibold"
-      >
-        Get Quote
-      </Link>
-
-    </div>
-
-  </div>
-
-</header>
-
+          <Link
+            href="/contact"
+            className="bg-[#0B2E5B] text-white px-5 py-5 rounded-2xl text-center mt-4 shadow-xl font-black uppercase tracking-[0.2em] text-sm"
+          >
+            Request Quote
+          </Link>
+        </div>
+      </div>
+    </header>
   )
 }

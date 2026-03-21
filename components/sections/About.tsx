@@ -116,7 +116,7 @@ export default function About() {
           <div className="flex items-center gap-3 mb-8">
             <div className="h-[2px] w-10 bg-[#C79A3B]" />
             <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#0B2E5B] font-bold">
-              Technical Specification // 01
+              Technical Specification // 
             </span>
           </div>
 
