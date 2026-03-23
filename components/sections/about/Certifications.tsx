@@ -7,6 +7,13 @@ import { X, ZoomIn, Award, ShieldCheck, Zap } from "lucide-react"
 
 const certificates = [
   {
+    title: "Startup India",
+    subtitle: "DPIIT Recognized",
+    image: "/images/certificates/cert5.png",
+    desc: "Officially recognized as a startup by the Department for Promotion of Industry and Internal Trade, Government of India, incorporated in 2022 for innovation in the Automotive industry."
+  },
+  
+  {
     title: "ISO 9001:2015",
     subtitle: "Quality Management",
     image: "/images/certificates/cert1.png",
@@ -30,6 +37,7 @@ const certificates = [
     image: "/images/certificates/cert4.png",
     desc: "Verified business credibility and financial transparency standards."
   }
+  
 ]
 
 export default function CertificationsPage() {

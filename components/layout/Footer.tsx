@@ -26,13 +26,7 @@ export default function Footer() {
           {/* Company */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Image
-                src="/images/assets/logo1.png"
-                width={52}
-                height={52}
-                alt="logo"
-                className="object-contain brightness-110"
-              />
+              
               <h3 className="text-xl md:text-2xl font-black leading-[0.9] tracking-tighter uppercase italic">
                 Srivruksh <br/>
                 <span className="text-[#C79A3B] text-[10px] tracking-[0.5em] not-italic font-bold block mt-1">Industries</span>
@@ -141,7 +135,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Srivruksh Industries all rights reserved.
         </p>
         <p className="text-center md:text-right">
-          Developed by <span className="text-[#C79A3B] hover:text-white transition-colors cursor-pointer">QIRO TECH INNOVATION PVT. LTD</span>
+          Developed by <span className="text-[#C79A3B] hover:text-white transition-colors cursor-pointer">QIRO TECH INNOVATION PVT. LTD.</span>
         </p>
       </div>
     </footer>

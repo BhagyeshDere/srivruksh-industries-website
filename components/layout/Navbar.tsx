@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className={`flex justify-between items-center transition-all duration-500
           ${scrolled ? "h-[70px]" : "h-[85px] md:h-[100px]"}`}>
 
-          {/* Logo - Typography: Increased tracking and weight contrast */}
+          {/* Logo - Animation removed as requested */}
           <Link href="/" className="flex items-center gap-3.5 group">
             <div className="relative">
               <Image
@@ -47,9 +47,10 @@ export default function Navbar() {
                 width={48}
                 height={48}
                 alt="logo"
-                className="transition duration-500 group-hover:rotate-[10deg] group-hover:scale-110"
+                className="transition duration-500" 
               />
-              <div className="absolute inset-0 rounded-full bg-[#C79A3B]/20 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              {/* Subtle ambient glow remains for depth without movement */}
+              <div className="absolute inset-0 rounded-full bg-[#C79A3B]/10 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
             </div>
 
             <span className="flex flex-col leading-tight">
@@ -62,7 +63,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Menu - Typography: Increased spacing for "Industrial" feel */}
+          {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8 lg:gap-10">
             {navLinks.map((item) => {
               const isActive = pathname === item.link
@@ -85,7 +86,7 @@ export default function Navbar() {
               )
             })}
 
-            {/* CTA Typography: Heavy weight with subtle tracking */}
+            {/* CTA Button */}
             <Link
               href="/contact"
               className="relative overflow-hidden group bg-[#C79A3B] text-white px-7 py-3 rounded-xl text-xs lg:text-sm font-black uppercase tracking-widest shadow-lg shadow-[#C79A3B]/20 transition-all hover:scale-105 active:scale-95"
@@ -109,7 +110,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu - Typography: Large, bold, and clear */}
+      {/* Mobile Menu */}
       <div className={`md:hidden transition-all duration-500 ease-in-out ${
         menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
       }`}>
@@ -127,6 +128,7 @@ export default function Navbar() {
 
           <Link
             href="/contact"
+            onClick={() => setMenuOpen(false)}
             className="bg-[#0B2E5B] text-white px-5 py-5 rounded-2xl text-center mt-4 shadow-xl font-black uppercase tracking-[0.2em] text-sm"
           >
             Request Quote
