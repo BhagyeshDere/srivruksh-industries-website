@@ -1,12 +1,10 @@
 import { Suspense } from "react"
-import Contact from "./ContactClient"
+import ContactClient from "./ContactClient"
 
-export const dynamic = "force-dynamic"
-
-export default function ContactPage() {
+export default function Page() {
   return (
     <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
-      <Contact />
+      <ContactClient />
     </Suspense>
   )
 }

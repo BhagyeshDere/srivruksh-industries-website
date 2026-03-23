@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { motion } from "framer-motion"
 
 export default function AboutHero() {
@@ -68,20 +69,26 @@ export default function AboutHero() {
           unmatched automation solutions designed for high-performance reliability.
         </motion.p>
 
-        {/* Buttons: Improved Shape & Hierarchy */}
+        {/* Buttons: Fixed Navigation */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-5"
         >
-          <button className="px-10 py-4 rounded-full bg-[#C79A3B] text-[#0B2E5B] text-xs font-black uppercase tracking-widest hover:bg-white hover:scale-105 transition-all duration-300 shadow-xl">
+          <Link 
+            href="/contact" 
+            className="w-full sm:w-auto px-10 py-4 rounded-full bg-[#C79A3B] text-[#0B2E5B] text-xs font-black uppercase tracking-widest hover:bg-white hover:scale-105 transition-all duration-300 shadow-xl text-center"
+          >
             Get Quote
-          </button>
+          </Link>
 
-          <button className="px-10 py-4 rounded-full border border-white/20 text-white text-xs font-black uppercase tracking-widest hover:bg-white/10 backdrop-blur-md transition-all duration-300">
+          <Link 
+            href="/services" 
+            className="w-full sm:w-auto px-10 py-4 rounded-full border border-white/20 text-white text-xs font-black uppercase tracking-widest hover:bg-white/10 backdrop-blur-md transition-all duration-300 text-center"
+          >
             View Services
-          </button>
+          </Link>
         </motion.div>
 
       </div>
@@ -89,7 +96,7 @@ export default function AboutHero() {
       {/* Decorative Bottom Mask */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0B2E5B] to-transparent z-20" />
       
-      {/* Side Decorative Text (Subtle UI touch) */}
+      {/* Side Decorative Text */}
       <div className="absolute left-10 bottom-10 hidden lg:block overflow-hidden">
         <p className="text-white/5 text-[12vh] font-black leading-none select-none tracking-tighter -mb-4">
           SRIVRUKSH

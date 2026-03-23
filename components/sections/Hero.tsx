@@ -42,7 +42,7 @@ export default function Hero() {
             Precision • Engineering • Excellence
           </motion.p>
 
-          {/* Heading: Heavy Industrial Style */}
+          {/* Heading: Heavy Industrial Style - Optimized for 2 Lines */}
           <motion.h1
             className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 tracking-tighter"
             initial={{ opacity: 0, y: 40 }}
@@ -50,7 +50,7 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.7 }}
           >
             Engineering <span className="text-[#C79A3B]">&</span> <br />
-            Fabrication <span className="text-white/40 font-light">Solutions</span>
+            Fabrication <span className="text-white">Solutions</span>
           </motion.h1>
 
           <motion.div

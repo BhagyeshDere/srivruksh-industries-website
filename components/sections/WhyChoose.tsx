@@ -149,12 +149,7 @@ export default function WhyChoose() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <button className="group relative px-10 md:px-12 py-4 bg-[#C79A3B] text-[#0B2E5B] rounded-2xl font-black text-xs uppercase tracking-[0.3em] overflow-hidden transition-all hover:shadow-[0_0_50px_rgba(199,154,59,0.5)] active:scale-95">
-            <span className="relative z-10 flex items-center gap-3">
-              Learn More <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-            </span>
-            <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-40 group-hover:animate-shine" />
-          </button>
+          
         </motion.div>
       </div>
 

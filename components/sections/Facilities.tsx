@@ -161,10 +161,7 @@ export default function Facilities() {
                     </p>
                   </div>
                   
-                  <div className="mt-4 flex items-center gap-2 text-[#C79A3B] text-[10px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
-                    <span>Technical Specs</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </div>
+                 
                 </div>
               </div>
             </div>

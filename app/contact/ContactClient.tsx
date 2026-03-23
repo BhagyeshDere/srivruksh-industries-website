@@ -1,23 +1,12 @@
 "use client"
 
-export const dynamic = "force-dynamic"  // ✅ ADD THIS
-
-import { Suspense } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Phone, Mail, MapPin, Globe, ArrowRight, Activity } from "lucide-react"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
-export default function ContactPage() {
-  return (
-    <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
-      <Contact />
-    </Suspense>
-  )
-}
-
-function Contact() {
+export default function ContactClient() {
   const searchParams = useSearchParams()
 
   const [product, setProduct] = useState("")
@@ -34,7 +23,9 @@ function Contact() {
   const handleSubmit = (e: any) => {
     e.preventDefault()
     const phoneNumber = "919420925126"
+
     const text = `📩 New Enquiry\n\n👤 Name: ${name}\n📧 Email: ${email}\n🏢 Company: ${company}\n📦 Product: ${product}\n\n📝 Message:\n${message}`
+
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`
     window.open(url, "_blank")
   }

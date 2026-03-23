@@ -220,7 +220,6 @@ function ServiceCard({ service, index, total }: { service: any, index: number, t
             priority={index < 2}
             className="object-cover opacity-60 brightness-[0.75] contrast-[1.05] transition-transform duration-[3s] ease-out group-hover:scale-110"
           />
-          {/* Reduced Blue Gradient Opacity here from /80 to /60 */}
           <div className={`absolute inset-0 z-10 ${
             isEven 
               ? "bg-gradient-to-r from-[#0B2E5B]/80 via-[#0B2E5B]/60 to-transparent md:to-[#0B2E5B]/5" 
@@ -261,13 +260,6 @@ function ServiceCard({ service, index, total }: { service: any, index: number, t
             <p className="text-slate-100 text-sm md:text-xl leading-relaxed font-medium mb-10 opacity-95 drop-shadow-md">
               {service.desc}
             </p>
-
-            <button className={`flex items-center gap-3 text-white text-xs md:text-sm font-black uppercase tracking-widest group/btn ${isEven ? '' : 'flex-row-reverse ml-auto'}`}>
-              <span className="group-hover/btn:text-[#C79A3B] transition-colors duration-300">Technical Specifications</span>
-              <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover/btn:bg-[#C79A3B] group-hover/btn:border-[#C79A3B] group-hover/btn:scale-110 transition-all duration-300">
-                <ArrowRight size={18} className="text-white" />
-              </div>
-            </button>
           </motion.div>
         </div>
 

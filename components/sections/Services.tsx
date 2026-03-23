@@ -148,12 +148,6 @@ function ServiceCard({ service, index, total }: { service: any, index: number, t
                     manufacturing workflows and expert craftsmanship.
                   </p>
                   
-                  <div className={`flex ${isLeft ? "" : "justify-end"}`}>
-                     <div className="group/btn inline-flex items-center gap-3 text-[#C79A3B] uppercase tracking-[0.2em] text-[10px] md:text-xs font-black transition-all cursor-pointer">
-                        <span className="border-b-2 border-transparent group-hover/btn:border-[#C79A3B] pb-1 transition-all">Explore Specifications</span>
-                        <span className="group-hover/btn:translate-x-2 transition-transform duration-300 text-lg">→</span>
-                     </div>
-                  </div>
                 </motion.div>
               </div>
             </div>

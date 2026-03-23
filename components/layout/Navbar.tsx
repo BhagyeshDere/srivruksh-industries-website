@@ -44,8 +44,8 @@ export default function Navbar() {
             <div className="relative">
               <Image
                 src="/images/assets/logo1.png"
-                width={48}
-                height={48}
+                width={70}
+                height={70}
                 alt="logo"
                 className="transition duration-500" 
               />
