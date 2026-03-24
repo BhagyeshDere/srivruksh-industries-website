@@ -34,58 +34,6 @@ export default function InfrastructureDetailPage() {
       {/* Top Reading Progress */}
       <motion.div className="fixed top-0 left-0 right-0 h-1.5 bg-[#C79A3B] z-50 origin-left" style={{ scaleX }} />
 
-      {/* ================= HERO ================= */}
-      <section className="relative bg-[#0B2E5B] py-32 md:py-52 text-center text-white px-6 overflow-hidden">
-        {/* Animated Architectural Grid */}
-        <div 
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-            backgroundSize: "60px 60px"
-          }}
-        />
-        
-        {/* Large Massive Watermark */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none">
-          <h2 className="text-[22vw] font-black tracking-tighter uppercase leading-none">
-            INFRA
-          </h2>
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-sm border border-white/20 bg-white/5 backdrop-blur-xl mb-10 shadow-2xl"
-          >
-            <Building2 size={16} className="text-[#C79A3B]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#C79A3B]">
-              Infrastructure Systems
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-5xl sm:text-7xl md:text-9xl font-black uppercase tracking-tight leading-[0.85] mb-8"
-          >
-            {product.title}
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-slate-300 mt-6 max-w-3xl mx-auto text-lg md:text-xl font-light leading-relaxed"
-          >
-            Engineered infrastructure components designed for durability,
-            safety, and reliable large-scale operations.
-          </motion.p>
-        </div>
-
-        {/* Bottom Hero Fade */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#f8fafc] to-transparent opacity-20" />
-      </section>
 
       {/* ================= CONTENT ================= */}
       <section className="py-24 md:py-36 px-6 relative">

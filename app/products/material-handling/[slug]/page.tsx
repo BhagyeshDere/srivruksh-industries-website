@@ -34,54 +34,7 @@ export default function ProductDetailPage() {
       {/* Top Reading Progress */}
       <motion.div className="fixed top-0 left-0 right-0 h-1.5 bg-[#C79A3B] z-50 origin-left" style={{ scaleX }} />
 
-      {/* ================= HERO ================= */}
-      <section className="relative bg-[#0B2E5B] py-32 md:py-52 text-center text-white px-6 overflow-hidden">
-        {/* Animated Technical Grid */}
-        <div 
-          className="absolute inset-0 opacity-10 pointer-events-none" 
-          style={{ backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`, backgroundSize: '80px 80px' }} 
-        />
-        
-        <div className="absolute inset-0 opacity-10">
-          {[...Array(4)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ x: "-100%" }}
-              animate={{ x: "100%" }}
-              transition={{ duration: 12, repeat: Infinity, delay: i * 2, ease: "linear" }}
-              className="absolute w-full h-px bg-gradient-to-r from-transparent via-white to-transparent"
-              style={{ top: `${i * 25}%` }}
-            />
-          ))}
-        </div>
-
-        {/* Floating Watermark */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none">
-          <h2 className="text-[20vw] font-black tracking-tighter uppercase leading-none">
-            ENGINEERED
-          </h2>
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-8"
-          >
-            <Settings size={14} className="text-[#C79A3B] animate-spin-slow" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#C79A3B]">Industrial Solution</span>
-          </motion.div>
-
-          <motion.h1 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-4xl md:text-8xl font-black uppercase tracking-tight leading-[0.85]"
-          >
-            {product.title}
-          </motion.h1>
-        </div>
-      </section>
-
+     
       {/* ================= CONTENT ================= */}
       <section className="py-24 px-6 relative">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
