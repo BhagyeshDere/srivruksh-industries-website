@@ -125,10 +125,10 @@ export default function MaterialHandlingPage() {
 
                     <div className="flex items-center justify-between mt-auto">
                       <a
-                        href={`/contact?product=${item.title}`}
+                       href={`/products/material-handling/${item.slug}`}
                         className="relative overflow-hidden group/btn inline-flex items-center gap-3 bg-[#0B2E5B] text-white px-6 py-3 rounded-xl font-black uppercase text-[9px] tracking-widest shadow-lg transition-all hover:pr-10"
                       >
-                        <span className="relative z-10">Enquire Now</span>
+                        <span className="relative z-10">View Detail</span>
                         <ArrowRight size={16} className="relative z-10 group-hover/btn:translate-x-2 transition-transform" />
                         <div className="absolute inset-0 bg-[#C79A3B] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300" />
                       </a>

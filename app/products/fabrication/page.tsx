@@ -13,7 +13,7 @@ export default function MaterialHandlingPage() {
   return (
     <main className="bg-[#f8fafc] min-h-screen">
 
-      {/* ================= HERO SECTION ================= */}
+      {/* ================= HERO SECTION (UPDATED ✅ FABRICATION) ================= */}
       <section className="relative bg-[#0B2E5B] py-32 md:py-48 text-center text-white px-6 overflow-hidden">
         <div 
           className="absolute inset-0 opacity-10 pointer-events-none" 
@@ -23,8 +23,11 @@ export default function MaterialHandlingPage() {
           }} 
         />
         
+        {/* Background Text */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none pointer-events-none">
-          <h2 className="text-[20vw] font-black tracking-tighter leading-none">HANDLING</h2>
+          <h2 className="text-[20vw] font-black tracking-tighter leading-none">
+            FABRICATION
+          </h2>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
@@ -34,7 +37,9 @@ export default function MaterialHandlingPage() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-8"
           >
             <Settings2 size={14} className="text-[#C79A3B]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#C79A3B]">Precision Logistics</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#C79A3B]">
+              Structural Engineering
+            </span>
           </motion.div>
 
           <motion.h1 
@@ -42,7 +47,7 @@ export default function MaterialHandlingPage() {
             animate={{ opacity: 1, scale: 1 }}
             className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-6"
           >
-            Material <span className="text-[#C79A3B]">Handling</span>
+            Industrial <span className="text-[#C79A3B]">Fabrication</span>
           </motion.h1>
 
           <motion.p 
@@ -51,15 +56,16 @@ export default function MaterialHandlingPage() {
             transition={{ delay: 0.2 }}
             className="text-slate-300 max-w-2xl mx-auto text-lg md:text-xl font-light"
           >
-            High performance industrial handling solutions engineered for safety and operational efficiency.
+            Precision-engineered fabrication solutions built for strength, durability, 
+            and high-performance industrial applications.
           </motion.p>
         </div>
       </section>
 
       {/* ================= PRODUCTS GRID ================= */}
-      <section className="py-20 px-6 relative"> {/* 🔥 slightly reduced padding */}
-        <div className="max-w-6xl mx-auto"> {/* 🔥 reduced width */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"> {/* 🔥 reduced gap */}
+      <section className="py-20 px-6 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             <AnimatePresence>
               {filteredProducts.map((item, index) => (
                 <motion.div
@@ -79,13 +85,15 @@ export default function MaterialHandlingPage() {
                   <div className="absolute top-6 left-6 right-6 flex justify-between items-center z-10">
                     <div className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#C79A3B] animate-pulse" />
-                      <span className="text-[9px] font-black text-[#0B2E5B]/40 uppercase tracking-widest">SI-MH-{index + 101}</span>
+                      <span className="text-[9px] font-black text-[#0B2E5B]/40 uppercase tracking-widest">
+                        SI-MH-{index + 101}
+                      </span>
                     </div>
                     <Shield size={14} className="text-[#0B2E5B]/10 group-hover:text-[#C79A3B] transition-colors" />
                   </div>
 
                   {/* IMAGE */}
-                  <div className="relative h-[240px] md:h-[300px] w-full mt-8"> {/* 🔥 reduced height */}
+                  <div className="relative h-[240px] md:h-[300px] w-full mt-8">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -95,11 +103,13 @@ export default function MaterialHandlingPage() {
                   </div>
 
                   {/* CONTENT */}
-                  <div className="p-8 md:p-10 bg-gradient-to-t from-slate-50/50 to-transparent relative border-t border-slate-50"> {/* 🔥 reduced padding */}
+                  <div className="p-8 md:p-10 bg-gradient-to-t from-slate-50/50 to-transparent relative border-t border-slate-50">
                     
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-6 h-[2px] bg-[#C79A3B]" />
-                      <span className="text-[#C79A3B] font-black text-[9px] uppercase tracking-[0.3em]">Heavy Duty Asset</span>
+                      <span className="text-[#C79A3B] font-black text-[9px] uppercase tracking-[0.3em]">
+                        Heavy Duty Asset
+                      </span>
                     </div>
 
                     <h3 className="text-2xl md:text-3xl font-black text-[#0B2E5B] mb-4 tracking-tighter uppercase leading-[0.9]">
@@ -112,10 +122,10 @@ export default function MaterialHandlingPage() {
 
                     <div className="flex items-center justify-between mt-auto">
                       <a
-                        href={`/contact?product=${item.title}`}
+                       href={`/products/fabrication/${item.slug}`}
                         className="relative overflow-hidden group/btn inline-flex items-center gap-3 bg-[#0B2E5B] text-white px-6 py-3 rounded-xl font-black uppercase text-[9px] tracking-widest shadow-lg transition-all hover:pr-10"
                       >
-                        <span className="relative z-10">Enquire Now</span>
+                        <span className="relative z-10">View Detail</span>
                         <ArrowRight size={16} className="relative z-10 group-hover/btn:translate-x-2 transition-transform" />
                         <div className="absolute inset-0 bg-[#C79A3B] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300" />
                       </a>
