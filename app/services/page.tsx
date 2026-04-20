@@ -230,10 +230,6 @@ function ServiceCard({ service, index, total }: { service: any, index: number, t
             <p className="text-slate-50 text-xs sm:text-sm md:text-xl leading-relaxed font-medium mb-6 md:mb-10 opacity-95 drop-shadow-md line-clamp-4 md:line-clamp-none">
               {service.desc}
             </p>
-
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-[#C79A3B] text-white rounded-lg border border-white/20 transition-all duration-300 backdrop-blur-md uppercase text-xs font-bold tracking-widest">
-              Learn More <ArrowRight size={16} />
-            </button>
           </motion.div>
         </div>
 
