@@ -29,11 +29,11 @@ export default function StorageSystemsPage() {
   return (
     <main className="bg-[#f8fafc] min-h-screen overflow-x-hidden">
 
-      {/* ================= HERO SECTION (MATCHED TO MATERIAL HANDLING) ================= */}
-      <section className="relative bg-[#0f172a] py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 overflow-hidden">
+      {/* ================= HERO SECTION (LIGHT THEME) ================= */}
+      <section className="relative bg-white py-16 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 overflow-hidden border-b border-slate-100">
         
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Animated Background Elements - Improved Visibility */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
           {[...Array(4)].map((_, i) => (
             <motion.div
               key={`beam-${i}`}
@@ -45,7 +45,7 @@ export default function StorageSystemsPage() {
                 delay: i * 2,
                 ease: "linear",
               }}
-              className="absolute w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#C79A3B]/30 to-transparent"
+              className="absolute w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#C79A3B]/40 to-transparent"
               style={{ top: `${i * 25}%` }}
             />
           ))}
@@ -53,7 +53,7 @@ export default function StorageSystemsPage() {
           {particles.map((p) => (
             <motion.div
               key={`orbit-${p.id}`}
-              className="absolute border border-[#C79A3B]/10 rounded-xl"
+              className="absolute border border-[#C79A3B]/30 rounded-xl"
               style={{
                 width: p.width,
                 height: p.height,
@@ -62,7 +62,7 @@ export default function StorageSystemsPage() {
               }}
               animate={{
                 rotate: [p.rotate, p.rotate + 360],
-                opacity: [0.03, 0.08, 0.03],
+                opacity: [0.08, 0.2, 0.08],
                 scale: [1, 1.2, 1],
               }}
               transition={{
@@ -74,9 +74,9 @@ export default function StorageSystemsPage() {
           ))}
         </div>
 
-        {/* Cinematic Watermark */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none pointer-events-none">
-          <h2 className="text-[35vw] sm:text-[25vw] md:text-[18vw] font-black tracking-tighter leading-none text-[#C79A3B]">
+        {/* Cinematic Watermark - IMPROVED VISIBILITY */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] select-none pointer-events-none z-0">
+          <h2 className="text-[35vw] sm:text-[25vw] md:text-[18vw] font-black tracking-tighter leading-none text-slate-300 uppercase">
             CONTAIN
           </h2>
         </div>
@@ -85,10 +85,10 @@ export default function StorageSystemsPage() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C79A3B]/40 bg-[#C79A3B]/5 backdrop-blur-sm mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-slate-50/50 backdrop-blur-sm mb-6"
           >
             <Database size={14} className="text-[#C79A3B]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C79A3B]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
               High-Volume Containment
             </span>
           </motion.div>
@@ -96,7 +96,7 @@ export default function StorageSystemsPage() {
           <motion.h1 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tight leading-[0.9] mb-4"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 uppercase tracking-tight leading-[0.9] mb-4"
           >
             Storage <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C79A3B] via-[#eec674] to-[#C79A3B]">
@@ -108,7 +108,7 @@ export default function StorageSystemsPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-slate-300 max-w-md sm:max-w-xl md:max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl font-light px-2 leading-relaxed"
+            className="text-slate-500 max-w-md sm:max-w-xl md:max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl font-light px-2 leading-relaxed"
           >
             Premium MS and Stainless Steel containment solutions engineered for 
             volumetric efficiency and industrial-grade structural integrity.
@@ -116,7 +116,7 @@ export default function StorageSystemsPage() {
         </div>
       </section>
 
-      {/* ================= PRODUCTS GRID (TWO-COL EDITORIAL LAYOUT) ================= */}
+      {/* ================= PRODUCTS GRID ================= */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 relative bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
@@ -130,12 +130,10 @@ export default function StorageSystemsPage() {
                   transition={{ delay: index * 0.1, duration: 0.8 }}
                   className="group relative bg-white rounded-[2rem] shadow-[0_20px_50px_-20px_rgba(15,23,42,0.1)] overflow-hidden border border-slate-100 flex flex-col h-full transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(199,154,59,0.15)]"
                 >
-                  {/* Subtle Grid Interaction Background */}
                   <div className="absolute inset-0 opacity-[0.015] pointer-events-none group-hover:opacity-[0.04] transition-opacity" 
                     style={{ backgroundImage: `radial-gradient(#C79A3B 1.5px, transparent 1.5px)`, backgroundSize: '24px 24px' }} 
                   />
 
-                  {/* Top Metadata Header */}
                   <div className="absolute top-6 left-8 right-8 flex justify-between items-center z-10">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-[#C79A3B] shadow-[0_0_10px_rgba(199,154,59,0.8)]" />
@@ -146,7 +144,6 @@ export default function StorageSystemsPage() {
                     <Box size={16} className="text-slate-200 group-hover:text-[#C79A3B] transition-colors" />
                   </div>
 
-                  {/* Product Image */}
                   <div className="relative h-[250px] sm:h-[300px] w-full mt-10 shrink-0">
                     <Image
                       src={item.image}
@@ -156,7 +153,6 @@ export default function StorageSystemsPage() {
                     />
                   </div>
 
-                  {/* Content / Info Section */}
                   <div className="p-8 sm:p-10 bg-gradient-to-t from-slate-50 to-transparent relative border-t border-slate-50 flex flex-col flex-grow">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-8 h-[2px] bg-[#C79A3B]" />
@@ -173,7 +169,6 @@ export default function StorageSystemsPage() {
                       {item.description}
                     </p>
 
-                    {/* Footer Actions */}
                     <div className="flex items-center justify-between pt-4 border-t border-slate-100/50">
                       <a
                         href={`/products/storage-systems/${item.slug}`}

@@ -38,10 +38,7 @@ export default function StructuralSystemsDetailPage() {
       {/* ================= HERO / ASSET VISUALIZER ================= */}
       <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden">
         
-        {/* Background Engineering Watermark */}
-        <div className="absolute top-0 right-0 opacity-[0.03] select-none pointer-events-none translate-x-1/4 -translate-y-1/4">
-           <h2 className="text-[22vw] font-black leading-none text-[#0f172a]">INFRA</h2>
-        </div>
+       
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 sm:gap-24 items-center">
 

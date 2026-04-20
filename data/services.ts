@@ -1,20 +1,21 @@
 export const services = [
 {
-title: "Industrial Automation & SPM Manufacturing",
-image: "/images/services/automation2.jpg"
+title: "Sheet Metal Fabrication",
+image: "/images/services/sheet-metal1.png"
 },
 {
-title: "Heavy Structural Fabrication",
-image: "/images/services/fabrication1.jpg"
+title: "SS Fabrication",
+image: "/images/services/ss-fab1.png"
 },
 {
-title: "Precision Machining Work",
-image: "/images/services/machining1.jpg"
+title: "MS Heavy Fabrication",
+image: "/images/services/heavy-ms1.png"
 },
 
 {
-title: "Pipeline Fabrication",
-image: "/images/services/pipeline1.jpg"
+title: "Fabrication with Machining",
+image: "/images/services/machining-fab.png"
 },
 
 ]
+

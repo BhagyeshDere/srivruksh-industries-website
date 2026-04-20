@@ -3,7 +3,18 @@
 import { useParams } from "next/navigation"
 import { products } from "@/data/products"
 import Image from "next/image"
-import { ArrowRight, ShieldCheck, Cpu, Settings2, Zap, Activity, Ruler, ChevronRight } from "lucide-react"
+import { 
+  ArrowRight, 
+  ShieldCheck, 
+  Cpu, 
+  Settings2, 
+  Zap, 
+  Activity, 
+  Ruler, 
+  ChevronRight,
+  Factory,
+  CheckCircle2 
+} from "lucide-react"
 import { motion, useScroll, useSpring } from "framer-motion"
 
 export default function IndustrialEquipmentDetailPage() {
@@ -16,9 +27,9 @@ export default function IndustrialEquipmentDetailPage() {
     restDelta: 0.001
   })
 
-  // Synchronized with Industrial Equipment category
+  // Synchronized with dynamic slug and industrial category
   const product = products.find(
-    (p) => p.slug === slug && p.category === "Industrial Equipment"
+    (p) => p.slug === slug
   )
 
   if (!product) {
@@ -37,12 +48,6 @@ export default function IndustrialEquipmentDetailPage() {
 
       {/* ================= HERO SECTION ================= */}
       <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden">
-        
-        {/* Background Engineering Watermark */}
-        <div className="absolute top-0 right-0 opacity-[0.03] select-none pointer-events-none translate-x-1/4 -translate-y-1/4">
-           <h2 className="text-[25vw] font-black leading-none text-[#0f172a]">ASSET</h2>
-        </div>
-
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 sm:gap-20 items-center">
 
           {/* ASSET VISUALIZER (Blueprint Style) */}
@@ -68,7 +73,9 @@ export default function IndustrialEquipmentDetailPage() {
             {/* Serial Number Decal */}
             <div className="absolute bottom-10 left-10 flex items-center gap-4">
                <div className="w-12 h-[1px] bg-[#C79A3B]" />
-               <span className="text-[10px] font-black text-slate-400 tracking-[0.3em] uppercase">IND_SPEC_{product.slug.slice(0, 4)}</span>
+               <span className="text-[10px] font-black text-slate-400 tracking-[0.3em] uppercase">
+                 IND_SPEC_{product.slug.slice(0, 4)}
+               </span>
             </div>
           </motion.div>
 
@@ -129,7 +136,6 @@ export default function IndustrialEquipmentDetailPage() {
 
       {/* ================= TECHNICAL MATRIX (Dark Theme) ================= */}
       <section className="bg-slate-900 py-24 px-4 sm:px-6 relative overflow-hidden">
-        {/* Background Dot Pattern */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
              style={{ backgroundImage: `radial-gradient(#fff 1px, transparent 1px)`, backgroundSize: '30px 30px' }} />
 
@@ -187,7 +193,7 @@ export default function IndustrialEquipmentDetailPage() {
           <motion.div>
             <div className="flex items-center gap-4 mb-12">
               <div className="p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                <Settings2 className="text-[#C79A3B]" size={28} />
+                <Factory className="text-[#C79A3B]" size={28} />
               </div>
               <h3 className="text-3xl font-black text-[#0f172a] uppercase tracking-tighter">
                 Deployment Sectors
@@ -231,7 +237,7 @@ export default function IndustrialEquipmentDetailPage() {
                 "Precision Dynamic Load Balancing"
               ].map((point, i) => (
                 <div key={i} className="flex items-start gap-5">
-                  <Zap size={22} className="text-[#C79A3B] shrink-0 mt-1" />
+                  <CheckCircle2 size={22} className="text-[#C79A3B] shrink-0 mt-1" />
                   <p className="text-base text-slate-300 font-medium leading-relaxed">
                     {point}
                   </p>
@@ -242,9 +248,6 @@ export default function IndustrialEquipmentDetailPage() {
 
         </div>
       </section>
-
-      
-
     </main>
   )
 }
