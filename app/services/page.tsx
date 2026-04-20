@@ -9,14 +9,14 @@ const services = [
   {
     title: "Sheet Metal Fabrication",
     desc: "High-precision sheet metal processing including bending, punching, and forming. We work with various gauges to create accurate enclosures, panels, and industrial components tailored to your exact specifications.",
-    image: "/images/services/sheet-metal1.png",
+    image: "/images/services/sheet-metal3.png",
     icon: <Layers size={24} />,
     id: "REF-001"
   },
   {
     title: "SS Fabrication",
     desc: "Specialized Stainless Steel fabrication for food, chemical, and pharmaceutical industries. We ensure high-grade finishes and superior corrosion resistance using advanced TIG welding and pickling-passivation processes.",
-    image: "/images/services/ss-fab1.png",
+    image: "/images/services/ss-fab2.png",
     icon: <ShieldCheck size={24} />,
     id: "REF-002"
   },
